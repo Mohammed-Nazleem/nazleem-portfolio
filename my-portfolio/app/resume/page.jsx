@@ -6,7 +6,6 @@ import {
   FaReact,
   FaFigma,
   FaJs,
-  FaHashtag,
 } from "react-icons/fa";
 
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
@@ -143,6 +142,14 @@ const skills = {
   ],
 };
 
+// recognition data
+const recognition = {
+  icon: "",
+  title: "",
+  description: "",
+  
+};
+
 const Resume = () => {
   return (
     <motion.div
@@ -167,6 +174,7 @@ const Resume = () => {
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
+            <TabsTrigger value="recognition">Recognitions</TabsTrigger>
           </TabsList>
 
           {/* content */}
