@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  FaHtml5,
-  FaCss3,
-  FaReact,
-  FaFigma,
-  FaJs,
-  FaHashtag,
-} from "react-icons/fa";
+import { FaHtml5, FaCss3, FaReact, FaFigma, FaJs } from "react-icons/fa";
 
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 
@@ -27,8 +20,8 @@ import { motion } from "framer-motion";
 // about data
 const about = {
   title: "About Me",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, debitis. Quas, nemo temporibus vitae dignissimos suscipit.",
+  description: `Driven, creative, and eager to make an impact. That's me in a nutshell.  A highly motivated individual with 3+ years of experience in the field.
+    I'm passionate about using my skills to bring fresh ideas to life and create meaningful solutions. Whether it's tackling a complex project or contributing to a collaborative team effort, I'm always ready to roll up my sleeves and get to work.`,
   info: [
     {
       fieldName: "Name",
@@ -62,17 +55,39 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My Experience",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, debitis. Quas, nemo temporibus vitae dignissimos suscipit.",
+    "I am a passionate and experienced Full Stack Developer with a proven track record of building high-quality software solutions. My expertise lies in creating user-friendly interfaces, efficient back-end systems, and seamless integrations.",
   items: [
     {
       company: "BitMatrix Solutions Inc",
       position: "Full Stack Developer",
       duration: "2023 - Present",
+      spec: [
+        {
+          desc: "Developed SaaS solution for 9Rounds gym management.",
+        },
+        {
+          desc: "Implemented custom portals for client workflow streamlining.",
+        },
+        {
+          desc: "Built robust SaaS application with user-friendly interfaces.",
+        },
+      ],
     },
     {
       company: "E-Commerce Startup",
       position: "Freelance Developer",
       duration: "2021 - 2023",
+      spec: [
+        {
+          desc: "Built custom Windows POS systems for diverse clients.",
+        },
+        {
+          desc: "Boosted client efficiency via report generation.",
+        },
+        {
+          desc: "Ensured optimal POS performance with ongoing support.",
+        },
+      ],
     },
   ],
 };
@@ -82,7 +97,7 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "My Education",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, debitis. Quas, nemo temporibus vitae dignissimos suscipit.",
+    "I hold a strong academic background in software engineering, demonstrating my commitment to continuous learning and technical proficiency.",
   items: [
     {
       institution: "London Metropolitan University",
@@ -106,7 +121,7 @@ const education = {
 const skills = {
   title: "My Skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, debitis. Quas, nemo temporibus vitae dignissimos suscipit.",
+    "As a skilled Full Stack Developer, I possess a diverse set of technical abilities that enable me to build robust and engaging web applications. My expertise spans from front-end development using HTML, CSS, and JavaScript frameworks like React and Next.js, to back-end development utilizing  ASP.NET CORE.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -143,6 +158,25 @@ const skills = {
   ],
 };
 
+// recognition data
+const recognition = {
+  title: "My recognitions",
+  description:
+    "My academic journey has been marked by a dedication to excellence, which has been recognized through several prestigious awards. These accolades reflect my commitment to continuous learning and my passion for pushing boundaries.",
+  awardSet: [
+    {
+      name: "Best academic student of the year",
+      year: 2014,
+      college: "British College",
+    },
+    {
+      name: "Most outstanding student of the year",
+      year: 2015,
+      college: "Edexcel",
+    },
+  ],
+};
+
 const Resume = () => {
   return (
     <motion.div
@@ -166,6 +200,7 @@ const Resume = () => {
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
+            <TabsTrigger value="recognition">Recognitions</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
 
@@ -184,16 +219,33 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] h-[300px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          <h3 className="text-xl max-w-[260px] min-h-[25px] text-center lg:text-left">
                             {item.position}
                           </h3>
-                          <div className="flex items-center gap-3">
+                          <div className="flex items-center gap-3 min-h-[50px]">
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                             <p className="text-white/60">{item.company}</p>
                           </div>
+                          <ul className="gap-4 min-h-[100px]">
+                            {item.spec.map((item, index) => {
+                              return (
+                                <li
+                                  key={index}
+                                  className="py-0 px-2 flex flex-col items-center lg:items-start gap-1"
+                                >
+                                  <div className="flex gap-3 items-center">
+                                    <span className="w-[10px] h-[2px] rounded-full bg-accent"></span>
+                                    <h3 className="text-white/80 text-[12px]  text-center lg:text-left">
+                                      {item.desc}
+                                    </h3>
+                                  </div>
+                                </li>
+                              );
+                            })}
+                          </ul>
                         </li>
                       );
                     })}
@@ -234,34 +286,67 @@ const Resume = () => {
             </TabsContent>
 
             {/* skills */}
-            <TabsContent value="skills" className="w-full h-full">
+            <TabsContent value="skills" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <div>
-                  <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                    {skills.description}
-                  </p>
-                </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
-                  {skills.skillList.map((item, index) => {
-                    return (
-                      <li key={index}>
-                        <TooltipProvider>
-                          <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                                {item.icon}
-                              </div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p className="capitalize">{item.name}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      </li>
-                    );
-                  })}
-                </ul>
+                <h3 className="text-4xl font-bold">{skills.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {skills.description}
+                </p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                    {skills.skillList.map((item, index) => {
+                      return (
+                        <li key={index}>
+                          <TooltipProvider>
+                            <Tooltip>
+                              <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                                <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                  {item.icon}
+                                </div>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p className="capitalize">{item.name}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
+              </div>
+            </TabsContent>
+
+            {/* recognitions */}
+            <TabsContent value="recognition" className="w-full">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold capitalize">
+                  {recognition.title}
+                </h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {recognition.description}
+                </p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {recognition.awardSet.map((item, index) => {
+                      return (
+                        <li
+                          key={index}
+                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        >
+                          <span className="text-accent">{item.year}</span>
+                          <h3 className="text-xl max-w-[260px] min-h-[80px] text-center lg:text-left">
+                            {item.name}
+                          </h3>
+                          <div className="flex items-center gap-3">
+                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                            <p className="text-white/60">{item.college}</p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
               </div>
             </TabsContent>
 
@@ -275,21 +360,23 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 mx-auto xl:mx-0 max-w-[620px]">
-                  {about.info.map((item, index) => {
-                    return (
-                      <li
-                        className="flex items-center justify-center xl:justify-start gap-4"
-                        key={index}
-                      >
-                        <span className="text-accent">{item.fieldName}</span>
-                        <p className="text-white/60 text-xl">
-                          {item.fieldvalue}
-                        </p>
-                      </li>
-                    );
-                  })}
-                </ul>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 mx-auto xl:mx-0 max-w-[620px]">
+                    {about.info.map((item, index) => {
+                      return (
+                        <li
+                          className="flex items-center justify-center xl:justify-start gap-4"
+                          key={index}
+                        >
+                          <span className="text-accent">{item.fieldName}</span>
+                          <p className="text-white/60 text-xl">
+                            {item.fieldvalue}
+                          </p>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
               </div>
             </TabsContent>
           </div>

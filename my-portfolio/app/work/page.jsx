@@ -23,13 +23,13 @@ const projects = [
   {
     num: "01",
     category: "Frontend",
-    title: "Project 1",
+    title: "Tic-Tac-Toe Game",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat repellat amet, veritatis architecto laboriosam dolor totam perspiciatis enim illum, minima eos voluptate possimus.",
-    stack: [{ name: "html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
-    image: "/assets/work/thumb1.png",
-    live: "",
-    github: "",
+      "Get ready for a classic game of strategy and fun! This interactive Tic-Tac-Toe game, built with React, brings the timeless fun to your screen. Customize the game with your own player names, enjoy a visually engaging experience, and celebrate victories with a winning announcement. A convenient 'Rematch' button allows you to jump right back into the action for more strategic fun.",
+    stack: [{ name: "html 5" }, { name: "Css 3" }, { name: "React" }],
+    image: "/assets/work/ticTakToe.png",
+    live: "https://tic-tac-toe-game-chi-two.vercel.app/",
+    github: "https://github.com/Mohammed-Nazleem/Tic-Tac-Toe-Game",
   },
   {
     num: "02",
@@ -82,7 +82,7 @@ const Work = () => {
               </div>
               {/* project category */}
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
+                {project.title}
               </h2>
               {/* project description */}
               <p className="text-white/60">{project.description}</p>
@@ -102,7 +102,7 @@ const Work = () => {
               {/* buttons */}
               <div className="flex items-center gap-4">
                 {/* live project button */}
-                <Link href={project.live}>
+                <Link href={project.live} target="_blank">
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -116,7 +116,7 @@ const Work = () => {
                 </Link>
 
                 {/* github project button */}
-                <Link href={project.github}>
+                <Link href={project.github} target="_blank">
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
