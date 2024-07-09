@@ -10,7 +10,7 @@ import Stats from "@/components/Stats";
 const Home = () => {
   // onClick handler to download the CV
   const cvFile =
-    "https://drive.google.com/file/d/12p4my_O-RDmO3YbiFiJvSBWtUK1KcV6F/view?usp=drive_link";
+    "https://drive.google.com/file/d/1aNyQQucIl-pzCX-ckjjp41mWdC9ZzWhz/view?usp=drive_link";
 
   return (
     <section className="h-full">
