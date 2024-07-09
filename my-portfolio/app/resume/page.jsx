@@ -1,8 +1,8 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaReact, FaFigma, FaJs } from "react-icons/fa";
+import { FaHtml5, FaCss3, FaReact, FaFigma, FaJs, FaDocker, FaNodeJs, FaLaravel } from "react-icons/fa";
 
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { SiTailwindcss, SiNextdotjs, SiMongodb, SiExpress, SiMysql } from "react-icons/si";
 
 import { Tabs, TabsList, TabsContent, TabsTrigger } from "@/components/ui/tabs";
 
@@ -154,6 +154,30 @@ const skills = {
     {
       icon: ".NET",
       name: "ASP .NET CORE",
+    },
+    {
+      icon: <FaLaravel/>,
+      name: "PHP Laravel",
+    },
+    {
+      icon: <FaNodeJs/>,
+      name: "NodeJs",
+    },
+    {
+      icon: <SiExpress/>,
+      name: "ExpressJs",
+    },
+    {
+      icon: <FaDocker/>,
+      name: "Docker",
+    },
+    {
+      icon: <SiMysql/>,
+      name: "MySQL",
+    },
+    {
+      icon: <SiMongodb/>,
+      name: "MongoDB",
     },
   ],
 };
