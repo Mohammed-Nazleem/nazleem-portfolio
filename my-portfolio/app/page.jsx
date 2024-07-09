@@ -8,10 +8,9 @@ import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
 const Home = () => {
-
   // onClick handler to download the CV
-  const cvFile = "https://drive.google.com/file/d/1mqw4G1iaQGuUALdmg8Q_75iSN13B0GB5/view?usp=drive_link";
-  
+  const cvFile =
+    "https://drive.google.com/file/d/12p4my_O-RDmO3YbiFiJvSBWtUK1KcV6F/view?usp=drive_link";
 
   return (
     <section className="h-full">
@@ -31,15 +30,15 @@ const Home = () => {
 
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-            <Link href={cvFile} target="_blank">
-              <Button
-                variant="outline"
-                size="lg"
-                className="uppercase flex items-center gap-2"
-              >
+              <Link href={cvFile} target="_blank">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="uppercase flex items-center gap-2"
+                >
                   <span>Download CV</span>
-                <FiDownload className="text-xl" />
-              </Button>
+                  <FiDownload className="text-xl" />
+                </Button>
               </Link>
 
               <div className="mb-8 xl:mb-0">
